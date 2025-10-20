@@ -1,17 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IdCard Generator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID Card Generator</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    
-    <div class="main">
-        <h1>ID Card Generator</h1>
+
+  <h1 id="head">ID-Card Generator</h1>
+
+  <div class="form-box">
+    <label>Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label>Father Name:</label>
+    <input type="text" id="fname" placeholder="Enter father name">
+
+    <label>CNIC:</label>
+    <input type="text" id="cnic" placeholder="Enter CNIC">
+
+    <label>Institute:</label>
+    <input type="text" id="institute" placeholder="Enter Institute Name">
+
+    <label>Course:</label>
+    <select id="course">
+      <option value="">Select Course </option>
+      <option>Graphic Designing</option>
+      <option>UI/UX Design</option>
+      <option>Web & App Development</option>
+      <option>Generative AI</option>
+      <option>Python Programming</option>
+      <option>Digital Marketing</option>
+    </select>
+
+    <label>Upload Photo:</label>
+    <input type="file" id="photo" accept="image/*">
+
+    <button id="generate">Generate ID Card</button>
+  </div>
+
+  <div class="id-container" id="idContainer">
+    <!-- FRONT CARD -->
+    <div class="card front" id="frontCard">
+      <h2 id="institute_name">Saylani Mass IT <br> Training Program</h2>
+      <img id="profilePic" src="" alt="Student Photo">
+      <h3 id="displayName"></h3>
+      <p id="displayCourse"></p>
+      <p class="id-num" id="displayId"></p>
     </div>
 
-    <script src="app.js"></script>
+    <!-- BACK CARD -->
+    <div class="card back">
+      <p>Name: <span id="bName"></span></p>
+      <p>Father Name: <span id="bFname"></span></p>
+      <p>CNIC: <span id="bCnic"></span></p>
+      <p>Course: <span id="bCourse"></span></p>
+
+      <div class="qr">
+        <img src="https://qrcg-free-editor.qr-code-generator.com/latest/assets/images/websiteQRCode_noFrame.png" alt="QR">
+      </div>
+
+      <p class="note">
+        Note: This card is for SMIT premises only. If found please return to SMIT.
+      </p>
+
+      <div class="authority">
+        <hr style="margin-bottom: 10px;">
+        Issuing Authority</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
 </body>
 </html>
